@@ -1,0 +1,25 @@
+import java.util.ArrayList;
+import java.util.List;
+
+public class MaleStudent {
+    private List<Student2> list;
+
+    public MaleStudent() {
+        list = new ArrayList<Student2>();
+        System.out.println(Thread.currentThread().getName() + " MaleStudent()");
+    }
+
+    public void accumulate(Student2 student2) {
+        list.add(student2);
+        System.out.println(Thread.currentThread().getName() + " accumulate()");
+    }
+
+    public List<Student2> getList() {
+        return list;
+    }
+
+    public void combine(MaleStudent other) {
+        list.addAll(other.getList());
+    }
+
+}
